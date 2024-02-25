@@ -61,13 +61,12 @@ R = R(1:num_movies, 1:num_users);
 %  Evaluate cost function
 J = cofiCostFunc([X(:) ; Theta(:)], Y, R, num_users, num_movies, ...
                num_features, 0);
-           
+
 fprintf(['Cost at loaded parameters: %f '...
          '\n(this value should be about 22.22)\n'], J);
 
 fprintf('\nProgram paused. Press enter to continue.\n');
 pause;
-
 
 %% ============== Part 3: Collaborative Filtering Gradient ==============
 %  Once your cost function matches up with ours, you should now implement 
@@ -82,7 +81,6 @@ checkCostFunction;
 fprintf('\nProgram paused. Press enter to continue.\n');
 pause;
 
-
 %% ========= Part 4: Collaborative Filtering Cost Regularization ========
 %  Now, you should implement regularization for the cost function for 
 %  collaborative filtering. You can implement it by adding the cost of
@@ -92,13 +90,12 @@ pause;
 %  Evaluate cost function
 J = cofiCostFunc([X(:) ; Theta(:)], Y, R, num_users, num_movies, ...
                num_features, 1.5);
-           
+
 fprintf(['Cost at loaded parameters (lambda = 1.5): %f '...
          '\n(this value should be about 31.34)\n'], J);
 
 fprintf('\nProgram paused. Press enter to continue.\n');
 pause;
-
 
 %% ======= Part 5: Collaborative Filtering Gradient Regularization ======
 %  Once your cost matches up with ours, you should proceed to implement 
@@ -113,7 +110,6 @@ checkCostFunction(1.5);
 
 fprintf('\nProgram paused. Press enter to continue.\n');
 pause;
-
 
 %% ============== Part 6: Entering ratings for a new user ===============
 %  Before we will train the collaborative filtering model, we will first
@@ -155,7 +151,6 @@ end
 
 fprintf('\nProgram paused. Press enter to continue.\n');
 pause;
-
 
 %% ================== Part 7: Learning Movie Ratings ====================
 %  Now, you will train the collaborative filtering model on a movie rating 

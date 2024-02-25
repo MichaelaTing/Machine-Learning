@@ -54,7 +54,6 @@ fprintf('Normalizing Features ...\n');
 % Add intercept term to X
 X = [ones(m, 1) X];
 
-
 %% ================ Part 2: Gradient Descent ================
 
 % ====================== YOUR CODE HERE ======================
@@ -106,7 +105,6 @@ fprintf('\n');
 % not need to be normalized.
 price = 0; % You should change this
 
-
 % ============================================================
 
 fprintf(['Predicted price of a 1650 sq-ft, 3 br house ' ...
@@ -146,11 +144,9 @@ fprintf('Theta computed from the normal equations: \n');
 fprintf(' %f \n', theta);
 fprintf('\n');
 
-
 % Estimate the price of a 1650 sq-ft, 3 br house
 % ====================== YOUR CODE HERE ======================
 price = 0; % You should change this
-
 
 % ============================================================
 

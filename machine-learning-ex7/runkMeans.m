@@ -33,16 +33,16 @@ idx = zeros(m, 1);
 
 % Run K-Means
 for i=1:max_iters
-    
+
     % Output progress
     fprintf('K-Means iteration %d/%d...\n', i, max_iters);
     if exist('OCTAVE_VERSION')
         fflush(stdout);
     end
-    
+
     % For each example in X, assign it to the closest centroid
     idx = findClosestCentroids(X, centroids);
-    
+
     % Optionally, plot progress here
     if plot_progress
         plotProgresskMeans(X, centroids, previous_centroids, idx, K, i);
@@ -50,7 +50,7 @@ for i=1:max_iters
         fprintf('Press enter to continue.\n');
         pause;
     end
-    
+
     % Given the memberships, compute new centroids
     centroids = computeCentroids(X, idx, K);
 end

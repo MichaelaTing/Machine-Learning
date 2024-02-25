@@ -21,8 +21,6 @@ idx = zeros(size(X,1), 1);
 % Note: You can use a for-loop over the examples to compute this.
 %
 
-
-
 minimum = zeros(K,1);
 for i = 1:length(idx)
   for j=1:K
@@ -30,11 +28,8 @@ for i = 1:length(idx)
   end
   [val,ind]=min(minimum);
   idx(i)=ind;
-  
+
 end
-
-
-
 
 % =============================================================
 

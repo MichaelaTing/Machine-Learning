@@ -26,8 +26,6 @@ k = length(b);
 k0 = 1;
 j = k;
 
-
-
 % With this if statement, strings of length 1 or 2 don't go through the
 % stemming process. Remove this conditional to match the published
 % algorithm.
@@ -111,7 +109,6 @@ while true
     i = i + 1;
 end
 
-
 % vowelinstem() is TRUE <=> k0,...j contains a vowel
 function vis = vowelinstem(b, k0)
 global j;
@@ -134,7 +131,6 @@ if b(i) ~= b(i-1)
     return
 end
 dc = cons(i, b, k0);
-
 
 % cvc(j) is TRUE <=> j-2,j-1,j has the form consonant - vowel - consonant
 % and also if the second c is not w,x or y. this is used when trying to

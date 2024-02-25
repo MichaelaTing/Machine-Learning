@@ -71,7 +71,6 @@ fprintf(['Gradient at theta = [1 ; 1]:  [%f; %f] '...
 fprintf('Program paused. Press enter to continue.\n');
 pause;
 
-
 %% =========== Part 4: Train Linear Regression =============
 %  Once you have implemented the cost and gradient correctly, the
 %  trainLinearReg function will use your cost function to train 
@@ -95,7 +94,6 @@ hold off;
 
 fprintf('Program paused. Press enter to continue.\n');
 pause;
-
 
 %% =========== Part 5: Learning Curve for Linear Regression =============
 %  Next, you should implement the learningCurve function. 
@@ -154,8 +152,6 @@ fprintf('  %f  \n', X_poly(1, :));
 
 fprintf('\nProgram paused. Press enter to continue.\n');
 pause;
-
-
 
 %% =========== Part 7: Learning Curve for Polynomial Regression =============
 %  Now, you will get to experiment with polynomial regression with multiple

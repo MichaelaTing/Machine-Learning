@@ -35,7 +35,7 @@ for j = 1:display_rows
 			break; 
 		end
 		% Copy the patch
-		
+
 		% Get the max value of the patch
 		max_val = max(abs(X(curr_ex, :)));
 		display_array(pad + (j - 1) * (example_height + pad) + (1:example_height), ...

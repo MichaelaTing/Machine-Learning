@@ -35,7 +35,6 @@ warmUpExercise()
 fprintf('Program paused. Press enter to continue.\n');
 pause;
 
-
 %% ======================= Part 2: Plotting =======================
 fprintf('Plotting Data ...\n')
 data = load('ex1data1.txt');
@@ -116,7 +115,6 @@ for i = 1:length(theta0_vals)
 	  J_vals(i,j) = computeCost(X, y, t);
     end
 end
-
 
 % Because of the way meshgrids work in the surf command, we need to
 % transpose J_vals before calling surf, or else the axes will be flipped

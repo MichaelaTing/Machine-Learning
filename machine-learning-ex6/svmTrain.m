@@ -76,16 +76,16 @@ end
 fprintf('\nTraining ...');
 dots = 12;
 while passes < max_passes,
-            
+
     num_changed_alphas = 0;
     for i = 1:m,
-        
+
         % Calculate Ei = f(x(i)) - y(i) using (2). 
         % E(i) = b + sum (X(i, :) * (repmat(alphas.*Y,1,n).*X)') - Y(i);
         E(i) = b + sum (alphas.*Y.*K(:,i)) - Y(i);
-        
+
         if ((Y(i)*E(i) < -tol && alphas(i) < C) || (Y(i)*E(i) > tol && alphas(i) > 0)),
-            
+
             % In practice, there are many heuristics one can use to select
             % the i and j. In this simplified code, we select them randomly.
             j = ceil(m * rand());
@@ -99,7 +99,7 @@ while passes < max_passes,
             % Save old alphas
             alpha_i_old = alphas(i);
             alpha_j_old = alphas(j);
-            
+
             % Compute L and H by (10) or (11). 
             if (Y(i) == Y(j)),
                 L = max(0, alphas(j) + alphas(i) - C);
@@ -108,7 +108,7 @@ while passes < max_passes,
                 L = max(0, alphas(j) - alphas(i));
                 H = min(C, C + alphas(j) - alphas(i));
             end
-           
+
             if (L == H),
                 % continue to next i. 
                 continue;
@@ -120,14 +120,14 @@ while passes < max_passes,
                 % continue to next i. 
                 continue;
             end
-            
+
             % Compute and clip new value for alpha j using (12) and (15).
             alphas(j) = alphas(j) - (Y(j) * (E(i) - E(j))) / eta;
-            
+
             % Clip
             alphas(j) = min (H, alphas(j));
             alphas(j) = max (L, alphas(j));
-            
+
             % Check if change in alpha is significant
             if (abs(alphas(j) - alpha_j_old) < tol),
                 % continue to next i. 
@@ -135,10 +135,10 @@ while passes < max_passes,
                 alphas(j) = alpha_j_old;
                 continue;
             end
-            
+
             % Determine value for alpha i using (16). 
             alphas(i) = alphas(i) + Y(i)*Y(j)*(alpha_j_old - alphas(j));
-            
+
             % Compute b1 and b2 using (17) and (18) respectively. 
             b1 = b - E(i) ...
                  - Y(i) * (alphas(i) - alpha_i_old) *  K(i,j)' ...
@@ -159,9 +159,9 @@ while passes < max_passes,
             num_changed_alphas = num_changed_alphas + 1;
 
         end
-        
+
     end
-    
+
     if (num_changed_alphas == 0),
         passes = passes + 1;
     else

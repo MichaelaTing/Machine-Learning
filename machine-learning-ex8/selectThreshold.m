@@ -12,7 +12,7 @@ F1 = 0;
 
 stepsize = (max(pval) - min(pval)) / 1000;
 for epsilon = min(pval):stepsize:max(pval)
-    
+
     % ====================== YOUR CODE HERE ======================
     % Instructions: Compute the F1 score of choosing epsilon as the
     %               threshold and place the value in F1. The code at the
@@ -23,27 +23,17 @@ for epsilon = min(pval):stepsize:max(pval)
     % Note: You can use predictions = (pval < epsilon) to get a binary vector
     %       of 0's and 1's of the outlier predictions
 
-
-
-
     predictions = (pval < epsilon);
-    
+
     TP = sum((predictions==1)&(yval==1));
     FP = sum((predictions==1)&(yval==0));
     FN = sum((predictions==0)&(yval==1));
 % I'm going to add the 'eps' just in order to eliminate the waring of 'dividion by zero' in MATLAB
-% ÔÚ³ýÊýºóÃæ¼ÓepsÒÔÏû³ý¡®division by zero¡¯µÄwarning
+% ï¿½Ú³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½epsï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½division by zeroï¿½ï¿½ï¿½ï¿½warning
     prec = TP/(TP+FP+eps);
     rec = TP/(TP+FN+eps);
 
     F1=2*prec*rec/(prec+rec+eps);
-
-
-
-
-
-
-
 
     % =============================================================
 
